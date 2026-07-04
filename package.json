@@ -1,0 +1,27 @@
+{
+  "name": "grok-hub",
+  "version": "0.3.0",
+  "description": "The ultimate Grok (xAI) development hub - CLI, TUI, Multi-Agent Council, Grok Build Clone",
+  "main": "index.js",
+  "scripts": {
+    "dev": "streamlit run examples/streamlit_demo.py",
+    "tui": "python -m src.tui.app",
+    "cli": "python -m src.cli",
+    "council": "python -m src.cli council",
+    "build": "python -m src.cli build",
+    "docs": "mkdocs serve",
+    "lint": "ruff check ."
+  },
+  "dependencies": {
+    "streamlit": "^1.38.0",
+    "gradio": "^5.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "vite": "^5.4.0",
+    "@types/node": "^22.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
