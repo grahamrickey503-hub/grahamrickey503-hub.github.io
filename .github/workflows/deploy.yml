@@ -45,12 +45,7 @@ jobs:
             echo "No build system detected; creating a minimal docs/index.html"
             mkdir -p docs
             if [ -z "$(ls -A docs)" ]; then
-              cat > docs/index.html <<'HTML'
-              <!doctype html>
-              <meta charset="utf-8">
-              <title>GitHub Pages</title>
-              <h1>Site deployed</h1>
-              HTML
+                printf '%s\n' '<!doctype html>' '<meta charset="utf-8">' '<title>GitHub Pages</title>' '<h1>Site deployed</h1>' > docs/index.html
             fi
           fi
       - name: Upload artifact
