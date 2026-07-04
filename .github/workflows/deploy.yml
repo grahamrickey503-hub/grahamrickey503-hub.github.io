@@ -21,6 +21,17 @@ jobs:
       - uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Ensure `docs/` exists
+        run: |
+          mkdir -p docs
+          if [ -z "$(ls -A docs)" ]; then
+            cat > docs/index.html <<'HTML'
+            <!doctype html>
+            <meta charset="utf-8">
+            <title>GitHub Pages</title>
+            <h1>Site deployed</h1>
+            HTML
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
